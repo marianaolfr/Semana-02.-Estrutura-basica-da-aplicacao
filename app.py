@@ -1,5 +1,9 @@
 from flask import Flask, request, make_response, redirect, abort;
-app = Flask(__name__);
+from flask import Flask
+from flask_wtf import CSRFProtect
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your_very_secret_key'
 
 @app.route('/')
 def index():
